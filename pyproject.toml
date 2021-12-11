@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "csv-download"
+version = "0.1.14"
+description = "csvでURLが記載された列を指定して一括でダウンロードして保存するスクリプト"
+readme = "README.md"
+authors = ["godan <shogo070920@gmail.com>"]
+license = "MIT"
+include = ["CHANGELOG.md"]
+homepage = "https://github.com/Godan/csv_download"
+repository = "https://github.com/Godan/csv_download" 
+
+[tool.poetry.scripts]
+csv_download = "csv_download.main:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+bandit = "^1.7.1"
+pylint = "^2.12.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
