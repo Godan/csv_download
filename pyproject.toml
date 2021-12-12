@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "csv-download"
-version = "0.1.14"
-description = "csvでURLが記載された列を指定して一括でダウンロードして保存するスクリプト"
+version = "0.1.2"
+description = "Script to specify the column with URL in csv and download and save in bulk."
 readme = "README.md"
 authors = ["godan <shogo070920@gmail.com>"]
 license = "MIT"

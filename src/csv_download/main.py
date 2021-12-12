@@ -1,5 +1,5 @@
 import os
-from optparse import OptionParser
+import argparse
 import urllib.error
 import urllib.request
 import csv
@@ -51,19 +51,20 @@ def main(
 
 
 def cli():
-    parser = OptionParser()
+    parser = argparse.ArgumentParser()
 
-    parser.add_option("-f", "--file", dest="file_path")
-    parser.add_option("-o", "--out", dest="out_path", default="./images")
-    parser.add_option("-p", "--prefix", dest="prefix", default="")
-    parser.add_option("-t", "--target-url-col", dest="target_url_colum", type="int")
-    parser.add_option("-n", "--name-col", dest="name_colum", default=0, type="int")
-    parser.add_option("--sleep", dest="sleep", default=1, type="int")
-    parser.add_option(
+    parser.add_argument("file_path", metavar="file path")
+    parser.add_argument("-o", "--out", dest="out_path", default="./images")
+    parser.add_argument("-p", "--prefix", dest="prefix", default="")
+    parser.add_argument("-t", "--target-url-col", dest="target_url_colum", default=1, type=int)
+    parser.add_argument("-n", "--name-col", dest="name_colum", default=0, type=int)
+    parser.add_argument("--sleep", dest="sleep", default=1, type=int)
+    parser.add_argument(
         "--header-skip", dest="header_skip", action="store_true", default=False
     )
 
-    option, args = parser.parse_args()
+    option = parser.parse_args()
+
     main(
         file_path=option.file_path,
         out_path=option.out_path,
